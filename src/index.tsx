@@ -32,33 +32,17 @@ import Doc from "./nodes/Doc";
 import Text from "./nodes/Text";
 import Blockquote from "./nodes/Blockquote";
 import BulletList from "./nodes/BulletList";
-import CodeBlock from "./nodes/CodeBlock";
-import CodeFence from "./nodes/CodeFence";
-import CheckboxList from "./nodes/CheckboxList";
-import CheckboxItem from "./nodes/CheckboxItem";
 import Embed from "./nodes/Embed";
 import HardBreak from "./nodes/HardBreak";
-import Heading from "./nodes/Heading";
-import HorizontalRule from "./nodes/HorizontalRule";
-import Image from "./nodes/Image";
 import ListItem from "./nodes/ListItem";
-import Notice from "./nodes/Notice";
 import OrderedList from "./nodes/OrderedList";
 import Paragraph from "./nodes/Paragraph";
-import Table from "./nodes/Table";
-import TableCell from "./nodes/TableCell";
-import TableHeadCell from "./nodes/TableHeadCell";
-import TableRow from "./nodes/TableRow";
 
 // marks
 import Bold from "./marks/Bold";
-import Code from "./marks/Code";
-import Highlight from "./marks/Highlight";
 import Italic from "./marks/Italic";
 import Link from "./marks/Link";
-import Strikethrough from "./marks/Strikethrough";
-import TemplatePlaceholder from "./marks/Placeholder";
-import Underline from "./marks/Underline";
+import Spoiler from "./marks/Spoiler";
 
 // plugins
 import BlockMenuTrigger from "./plugins/BlockMenuTrigger";
@@ -229,58 +213,17 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
         new Paragraph(),
         new Blockquote(),
         new BulletList(),
-        new CodeBlock({
-          dictionary,
-          initialReadOnly: this.props.readOnly,
-          onShowToast: this.props.onShowToast,
-        }),
-        new CodeFence({
-          dictionary,
-          initialReadOnly: this.props.readOnly,
-          onShowToast: this.props.onShowToast,
-        }),
-        new CheckboxList(),
-        new CheckboxItem(),
         new Embed(),
         new ListItem(),
-        new Notice({
-          dictionary,
-        }),
-        new Heading({
-          dictionary,
-          onShowToast: this.props.onShowToast,
-          offset: this.props.headingsOffset,
-        }),
-        new HorizontalRule(),
-        new Image({
-          dictionary,
-          uploadImage: this.props.uploadImage,
-          onImageUploadStart: this.props.onImageUploadStart,
-          onImageUploadStop: this.props.onImageUploadStop,
-          onShowToast: this.props.onShowToast,
-        }),
-        new Table(),
-        new TableCell({
-          onSelectTable: this.handleSelectTable,
-          onSelectRow: this.handleSelectRow,
-        }),
-        new TableHeadCell({
-          onSelectColumn: this.handleSelectColumn,
-        }),
-        new TableRow(),
         new Bold(),
-        new Code(),
-        new Highlight(),
+        new Spoiler(),
         new Italic(),
-        new TemplatePlaceholder(),
-        new Underline(),
         new Link({
           onKeyboardShortcut: this.handleOpenLinkMenu,
           onClickLink: this.props.onClickLink,
           onClickHashtag: this.props.onClickHashtag,
           onHoverLink: this.props.onHoverLink,
         }),
-        new Strikethrough(),
         new OrderedList(),
         new History(),
         new SmartText(),
