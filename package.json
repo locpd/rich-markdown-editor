@@ -1,5 +1,5 @@
 {
-  "name": "rich-markdown-editor",
+  "name": "@locpd/rich-markdown-editor",
   "description": "A rich text editor with Markdown shortcuts",
   "version": "11.0.6",
   "main": "dist/index.js",
@@ -94,7 +94,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/outline/rich-markdown-editor.git"
+    "url": "git+https://github.com/locpd/rich-markdown-editor.git"
   },
   "keywords": [
     "editor",
