@@ -212,21 +212,6 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
         new HardBreak(),
         new Paragraph(),
         new Blockquote(),
-<<<<<<< HEAD
-        new CodeBlock({
-          dictionary,
-          initialReadOnly: this.props.readOnly,
-          onShowToast: this.props.onShowToast,
-        }),
-        new CodeFence({
-          dictionary,
-          initialReadOnly: this.props.readOnly,
-          onShowToast: this.props.onShowToast,
-        }),
-        new CheckboxList(),
-        new CheckboxItem(),
-=======
->>>>>>> 55b712a... modified for taigame.org usage
         new BulletList(),
         new Embed(),
         new ListItem(),
