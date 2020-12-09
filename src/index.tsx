@@ -45,7 +45,6 @@ import Link from "./marks/Link";
 import Spoiler from "./marks/Spoiler";
 
 // plugins
-import BlockMenuTrigger from "./plugins/BlockMenuTrigger";
 import History from "./plugins/History";
 import Keys from "./plugins/Keys";
 import Placeholder from "./plugins/Placeholder";
@@ -202,8 +201,6 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
   }
 
   createExtensions() {
-    const dictionary = this.dictionary(this.props.dictionary);
-
     // adding nodes here? Update schema.ts for serialization on the server
     return new ExtensionManager(
       [
@@ -233,11 +230,6 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
           onSave: this.handleSave,
           onSaveAndExit: this.handleSaveAndExit,
           onCancel: this.props.onCancel,
-        }),
-        new BlockMenuTrigger({
-          dictionary,
-          onOpen: this.handleOpenBlockMenu,
-          onClose: this.handleCloseBlockMenu,
         }),
         new Placeholder({
           placeholder: this.props.placeholder,
